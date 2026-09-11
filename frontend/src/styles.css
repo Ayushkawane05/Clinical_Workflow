@@ -11,17 +11,8 @@
 }
 
 /*
- * Design system definition.
- *
- * The @theme inline block maps CSS custom properties to Tailwind utility
- * classes (e.g. --color-primary -> bg-primary, text-primary).
- *
- * The :root and .dark blocks define the actual color values using oklch.
- * All colors MUST use oklch format.
- *
- * To add a new semantic color:
- * 1. Add the variable to :root (light value) and .dark (dark value)
- * 2. Register it in @theme inline as --color-<name>: var(--<name>)
+ * Clinical design system — soft medical blues, clean surfaces, calm hierarchy.
+ * Colors MUST use oklch format.
  */
 
 @theme inline {
@@ -75,77 +66,86 @@
   --color-critical-foreground: var(--critical-foreground);
   --color-surface: var(--surface);
   --color-surface-muted: var(--surface-muted);
+  --color-clinical: var(--clinical);
+  --color-clinical-foreground: var(--clinical-foreground);
   --shadow-card: var(--shadow-card);
   --shadow-elevated: var(--shadow-elevated);
 }
 
 :root {
-  --radius: 0.5rem;
-  --background: oklch(0.975 0.005 220);
-  --foreground: oklch(0.24 0.03 250);
-  --surface: oklch(1 0 0);
-  --surface-muted: oklch(0.965 0.008 225);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.24 0.03 250);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.24 0.03 250);
-  --primary: oklch(0.52 0.11 213);
-  --primary-foreground: oklch(0.99 0.005 220);
-  --secondary: oklch(0.945 0.012 225);
-  --secondary-foreground: oklch(0.32 0.035 245);
-  --muted: oklch(0.955 0.008 225);
-  --muted-foreground: oklch(0.53 0.025 245);
-  --accent: oklch(0.93 0.035 200);
-  --accent-foreground: oklch(0.32 0.06 220);
+  --radius: 0.625rem;
+  /* Soft clinical wash — cool white with a hint of medical blue */
+  --background: oklch(0.972 0.008 230);
+  --foreground: oklch(0.28 0.04 250);
+  --surface: oklch(0.995 0.002 230);
+  --surface-muted: oklch(0.955 0.012 225);
+  --card: oklch(0.995 0.002 230);
+  --card-foreground: oklch(0.28 0.04 250);
+  --popover: oklch(0.995 0.002 230);
+  --popover-foreground: oklch(0.28 0.04 250);
+  /* Trust medical blue-teal */
+  --primary: oklch(0.48 0.1 230);
+  --primary-foreground: oklch(0.99 0.004 220);
+  --secondary: oklch(0.94 0.018 220);
+  --secondary-foreground: oklch(0.34 0.05 240);
+  --muted: oklch(0.95 0.01 225);
+  --muted-foreground: oklch(0.5 0.03 245);
+  --accent: oklch(0.94 0.03 195);
+  --accent-foreground: oklch(0.34 0.07 210);
   --destructive: oklch(0.55 0.19 25);
-  --destructive-foreground: oklch(0.99 0.005 220);
-  --success: oklch(0.58 0.11 160);
-  --success-foreground: oklch(0.99 0.005 220);
-  --warning: oklch(0.72 0.14 70);
-  --warning-foreground: oklch(0.24 0.03 250);
-  --info: oklch(0.6 0.1 240);
-  --info-foreground: oklch(0.99 0.005 220);
+  --destructive-foreground: oklch(0.99 0.004 220);
+  --success: oklch(0.55 0.12 155);
+  --success-foreground: oklch(0.99 0.004 220);
+  --warning: oklch(0.78 0.12 75);
+  --warning-foreground: oklch(0.32 0.05 70);
+  --info: oklch(0.55 0.1 245);
+  --info-foreground: oklch(0.99 0.004 220);
   --critical: oklch(0.48 0.2 20);
-  --critical-foreground: oklch(0.99 0.005 220);
-  --border: oklch(0.9 0.01 230);
-  --input: oklch(0.9 0.01 230);
-  --ring: oklch(0.52 0.11 213);
-  --chart-1: oklch(0.52 0.11 213);
-  --chart-2: oklch(0.62 0.12 175);
-  --chart-3: oklch(0.72 0.14 70);
-  --chart-4: oklch(0.55 0.19 25);
-  --chart-5: oklch(0.55 0.09 285);
-  --sidebar: oklch(0.26 0.035 248);
-  --sidebar-foreground: oklch(0.9 0.012 230);
-  --sidebar-primary: oklch(0.62 0.12 200);
-  --sidebar-primary-foreground: oklch(0.15 0.03 250);
-  --sidebar-accent: oklch(0.32 0.04 248);
-  --sidebar-accent-foreground: oklch(0.97 0.008 220);
-  --sidebar-border: oklch(0.34 0.035 248);
-  --sidebar-ring: oklch(0.62 0.12 200);
-  --shadow-card: 0 1px 2px oklch(0.24 0.03 250 / 6%), 0 1px 3px oklch(0.24 0.03 250 / 4%);
-  --shadow-elevated: 0 12px 32px -12px oklch(0.24 0.03 250 / 22%);
+  --critical-foreground: oklch(0.99 0.004 220);
+  --clinical: oklch(0.42 0.09 235);
+  --clinical-foreground: oklch(0.99 0.004 220);
+  --border: oklch(0.88 0.015 230);
+  --input: oklch(0.9 0.012 230);
+  --ring: oklch(0.48 0.1 230);
+  --chart-1: oklch(0.48 0.1 230);
+  --chart-2: oklch(0.58 0.11 170);
+  --chart-3: oklch(0.75 0.12 75);
+  --chart-4: oklch(0.55 0.18 25);
+  --chart-5: oklch(0.52 0.08 280);
+  /* Light clinical sidebar (portal-style) */
+  --sidebar: oklch(0.995 0.003 230);
+  --sidebar-foreground: oklch(0.4 0.035 245);
+  --sidebar-primary: oklch(0.48 0.1 230);
+  --sidebar-primary-foreground: oklch(0.99 0.004 220);
+  --sidebar-accent: oklch(0.94 0.03 220);
+  --sidebar-accent-foreground: oklch(0.32 0.07 235);
+  --sidebar-border: oklch(0.9 0.015 230);
+  --sidebar-ring: oklch(0.48 0.1 230);
+  --shadow-card: 0 1px 2px oklch(0.35 0.04 250 / 5%), 0 4px 12px oklch(0.35 0.04 250 / 4%);
+  --shadow-elevated: 0 16px 40px -16px oklch(0.35 0.04 250 / 18%);
 }
 
 .dark {
-  --background: oklch(0.18 0.025 250);
+  --background: oklch(0.2 0.025 250);
   --foreground: oklch(0.96 0.008 220);
-  --surface: oklch(0.23 0.03 250);
-  --surface-muted: oklch(0.26 0.03 250);
-  --card: oklch(0.23 0.03 250);
+  --surface: oklch(0.24 0.03 250);
+  --surface-muted: oklch(0.27 0.03 250);
+  --card: oklch(0.24 0.03 250);
   --card-foreground: oklch(0.96 0.008 220);
-  --popover: oklch(0.23 0.03 250);
+  --popover: oklch(0.24 0.03 250);
   --popover-foreground: oklch(0.96 0.008 220);
-  --primary: oklch(0.66 0.12 205);
-  --primary-foreground: oklch(0.16 0.03 250);
-  --success: oklch(0.66 0.12 160);
-  --success-foreground: oklch(0.16 0.03 250);
-  --warning: oklch(0.78 0.14 75);
-  --warning-foreground: oklch(0.16 0.03 250);
-  --info: oklch(0.68 0.1 240);
-  --info-foreground: oklch(0.16 0.03 250);
-  --critical: oklch(0.6 0.2 22);
-  --critical-foreground: oklch(0.99 0.005 220);
+  --primary: oklch(0.7 0.1 215);
+  --primary-foreground: oklch(0.18 0.03 250);
+  --success: oklch(0.68 0.12 160);
+  --success-foreground: oklch(0.18 0.03 250);
+  --warning: oklch(0.8 0.12 75);
+  --warning-foreground: oklch(0.2 0.03 250);
+  --info: oklch(0.7 0.1 245);
+  --info-foreground: oklch(0.18 0.03 250);
+  --critical: oklch(0.62 0.18 22);
+  --critical-foreground: oklch(0.99 0.004 220);
+  --clinical: oklch(0.68 0.09 230);
+  --clinical-foreground: oklch(0.18 0.03 250);
   --shadow-card: 0 1px 2px oklch(0 0 0 / 30%);
   --shadow-elevated: 0 12px 32px -12px oklch(0 0 0 / 55%);
   --secondary: oklch(0.279 0.041 260.031);
@@ -159,19 +159,19 @@
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.551 0.027 264.364);
-  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-1: oklch(0.62 0.12 220);
   --chart-2: oklch(0.696 0.17 162.48);
   --chart-3: oklch(0.769 0.188 70.08);
   --chart-4: oklch(0.627 0.265 303.9);
   --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.208 0.042 265.755);
-  --sidebar-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.279 0.041 260.031);
-  --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
+  --sidebar: oklch(0.22 0.03 250);
+  --sidebar-foreground: oklch(0.92 0.01 230);
+  --sidebar-primary: oklch(0.7 0.1 215);
+  --sidebar-primary-foreground: oklch(0.18 0.03 250);
+  --sidebar-accent: oklch(0.28 0.04 250);
+  --sidebar-accent-foreground: oklch(0.97 0.008 220);
   --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.551 0.027 264.364);
+  --sidebar-ring: oklch(0.7 0.1 215);
 }
 
 @layer base {
@@ -182,5 +182,15 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-feature-settings: "kern" 1, "liga" 1;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Soft clinical page wash */
+  .clinical-canvas {
+    background:
+      radial-gradient(1200px 480px at 8% -10%, oklch(0.92 0.04 210 / 45%), transparent 60%),
+      radial-gradient(900px 420px at 100% 0%, oklch(0.93 0.03 195 / 35%), transparent 55%),
+      var(--color-background);
   }
 }

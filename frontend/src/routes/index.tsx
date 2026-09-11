@@ -133,7 +133,7 @@ function Dashboard() {
       </div>
 
       <div className="grid gap-4 lg:grid-cols-2">
-        <Card className="shadow-card">
+        <Card className="border-border/70 shadow-card">
           <CardHeader>
             <CardTitle className="text-base">Patient risk distribution</CardTitle>
             <CardDescription>Risk stratification across the synthetic cohort.</CardDescription>
@@ -159,7 +159,7 @@ function Dashboard() {
           </CardContent>
         </Card>
 
-        <Card className="shadow-card">
+        <Card className="border-border/70 shadow-card">
           <CardHeader>
             <CardTitle className="text-base">Referrals by specialty</CardTitle>
             <CardDescription>Where the orchestrator agent is routing patients.</CardDescription>
@@ -195,7 +195,7 @@ function Dashboard() {
       </div>
 
       <div className="grid gap-4 lg:grid-cols-2">
-        <Card className="shadow-card">
+        <Card className="border-border/70 shadow-card">
           <CardHeader>
             <CardTitle className="text-base">Recent workflow runs</CardTitle>
             <CardDescription>Latest agent executions this session.</CardDescription>
@@ -234,7 +234,7 @@ function Dashboard() {
           </CardContent>
         </Card>
 
-        <Card className="shadow-card">
+        <Card className="border-border/70 shadow-card">
           <CardHeader>
             <CardTitle className="text-base">Recent referrals</CardTitle>
             <CardDescription>Newest specialist assignments.</CardDescription>

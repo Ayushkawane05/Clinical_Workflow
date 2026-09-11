@@ -11,7 +11,7 @@ export function Disclaimer({ compact = false }: { compact?: boolean }) {
     );
   }
   return (
-    <div className="flex items-start gap-2.5 rounded-md border border-warning/40 bg-warning/10 px-3 py-2.5 text-xs text-foreground">
+    <div className="flex items-start gap-2.5 rounded-xl border border-warning/35 bg-warning/10 px-4 py-3 text-xs leading-relaxed text-foreground">
       <ShieldAlert className="mt-0.5 size-4 shrink-0 text-warning-foreground" aria-hidden />
       <span>{AI_DISCLAIMER}</span>
     </div>

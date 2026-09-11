@@ -11,6 +11,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { CollaboratingPartner } from "@/components/common/CollaboratingPartner";
 import { Pill } from "@/components/common/StatusBadge";
 import { ENVIRONMENT_LABEL } from "@/api/config";
 import { usePatients } from "@/hooks/useClinicalQueries";
@@ -38,7 +39,7 @@ export function TopHeader() {
   );
 
   return (
-    <header className="sticky top-0 z-30 flex h-14 items-center gap-3 border-b border-border bg-surface px-4 lg:px-6">
+    <header className="sticky top-0 z-30 flex h-16 items-center gap-3 border-b border-border bg-surface/90 px-4 backdrop-blur-md lg:px-6">
       <div className="relative w-full max-w-md">
         <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
         <Input
@@ -51,10 +52,10 @@ export function TopHeader() {
           onBlur={() => window.setTimeout(() => setOpen(false), 150)}
           placeholder="Search patients by name or ID…"
           aria-label="Global patient search"
-          className="pl-9"
+          className="h-10 border-border/80 bg-background/80 pl-9 shadow-none"
         />
         {open && term.trim() ? (
-          <div className="absolute left-0 right-0 top-11 overflow-hidden rounded-md border border-border bg-popover shadow-elevated">
+          <div className="absolute left-0 right-0 top-11 overflow-hidden rounded-lg border border-border bg-popover shadow-elevated">
             {results.length === 0 ? (
               <p className="px-3 py-3 text-sm text-muted-foreground">No patients match “{term}”.</p>
             ) : (
@@ -62,7 +63,7 @@ export function TopHeader() {
                 <button
                   key={p.patient_id}
                   type="button"
-                  className="flex w-full items-center justify-between px-3 py-2 text-left text-sm hover:bg-accent"
+                  className="flex w-full items-center justify-between px-3 py-2.5 text-left text-sm hover:bg-accent"
                   onMouseDown={() => {
                     setTerm("");
                     setOpen(false);
@@ -79,7 +80,11 @@ export function TopHeader() {
       </div>
 
       <div className="ml-auto flex items-center gap-2 sm:gap-3">
-        <Pill tone="warning" className="hidden sm:inline-flex">
+        <div className="hidden md:block">
+          <CollaboratingPartner variant="inline" />
+        </div>
+
+        <Pill tone="info" className="hidden sm:inline-flex">
           {ENVIRONMENT_LABEL}
         </Pill>
 
@@ -118,7 +123,7 @@ export function TopHeader() {
 
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="outline" className="gap-2">
+            <Button variant="outline" className="h-10 gap-2 border-border/80 bg-background/80">
               <span className="flex size-6 items-center justify-center rounded-full bg-primary/10 text-[11px] font-semibold text-primary">
                 {user.initials}
               </span>
@@ -134,7 +139,9 @@ export function TopHeader() {
             {(["Clinician", "Care Coordinator"] as Role[]).map((role) => (
               <DropdownMenuItem key={role} onSelect={() => setRole(role)}>
                 {role}
-                {user.role === role ? <span className="ml-auto text-xs text-muted-foreground">Active</span> : null}
+                {user.role === role ? (
+                  <span className="ml-auto text-xs text-muted-foreground">Active</span>
+                ) : null}
               </DropdownMenuItem>
             ))}
           </DropdownMenuContent>
